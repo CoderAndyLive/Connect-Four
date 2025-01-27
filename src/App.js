@@ -82,7 +82,7 @@ function App() {
 
   const renderCell = (row, col) => {
     const cellValue = board[row][col];
-    const cellStyle = cellValue ? { backgroundColor: playerColors[cellValue] } : { backgroundColor: '#ddd' };
+    const cellStyle = cellValue ? { backgroundColor: playerColors[cellValue], transition: 'background-color 0.5s ease' } : { backgroundColor: '#ddd' };
     return (
       <div
         className="cell"

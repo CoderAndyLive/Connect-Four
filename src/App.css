@@ -58,6 +58,8 @@
   justify-content: center;
   cursor: pointer;
   border-radius: 50%;
+  position: relative;
+  overflow: hidden;
 }
 
 .cell:hover {
@@ -71,6 +73,9 @@
   height: 40px;
   border-radius: 50%;
   background-color: white;
+  position: absolute;
+  top: -50px;
+  transition: top 0.5s ease-in;
 }
 
 .cell.Red::before {
@@ -78,6 +83,14 @@
 }
 
 .cell.Yellow::before {
+  background-color: yellow;
+}
+
+.cell.Red .disc {
+  background-color: red;
+}
+
+.cell.Yellow .disc {
   background-color: yellow;
 }
 
