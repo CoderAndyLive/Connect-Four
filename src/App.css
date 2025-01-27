@@ -1,0 +1,137 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.board {
+  display: grid;
+  grid-template-rows: repeat(6, 50px);
+  grid-template-columns: repeat(7, 50px);
+  gap: 5px;
+  margin: 20px 0;
+}
+
+.row {
+  display: contents;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.cell:hover {
+  background-color: #ccc;
+}
+
+.cell::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.cell.Red::before {
+  background-color: red;
+}
+
+.cell.Yellow::before {
+  background-color: yellow;
+}
+
+.color-picker, .name-input {
+  margin-top: 20px;
+}
+
+.color-picker label, .name-input label {
+  margin: 0 10px;
+  color: white;
+}
+
+.name-input input {
+  margin-left: 10px;
+}
+
+.name-input button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #61dafb;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.name-input button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.vs {
+  margin: 0 10px;
+  font-size: 1.5em;
+  color: white;
+}
+
+.winner-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.winner-popup button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #61dafb;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
